@@ -388,9 +388,10 @@ int main(int argc, char *argv[])
 
 	init();
 	
-	if(argc == 1)
-		jpg = new JPG_dat("qr4.jpg");
-	else
+	if(argc == 1){
+		printf("error: no file name\n");
+		exit(0);
+	}else
 		jpg = new JPG_dat(argv[1]);
 
 	qr_img = new Mat(jpg->width, jpg->height);
